@@ -2,7 +2,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.hibernate.orm</groupId>
-    <artifactId>DigitSpan</artifactId>
+    <artifactId>WorkingMemoryGame</artifactId>
     <version>6.5.1.Final</version>
     <name>Hibernate ORM - hibernate-core</name>
     <description>Hibernate's core ORM functionality</description>
