@@ -1,136 +1,93 @@
 ## WORKING MEMORY GAME
 
 
-This project is a Digit Span Memory Game, developed with Java, Hibernate ORM, JSP, and Servlets, designed to test users' memory span by recalling sequences of digits displayed on the screen. The game includes multiple modes such as Forwards, Backwards, Sequencing, and Letter-Number Sequencing. It is essentially a direct digital clone of the WAIS-IV Digit Span and Letter-Number Sequencing subtests, replicating these well-known cognitive assessments. This project offers users an authentic experience that mirrors the memory tasks used in professional IQ testing to measure working memory.
+The Digit Span Game is a web-based application designed to test and improve working memory. The game presents users with sequences of digits or letters and numbers, and the user must recall and input the sequences in various modes such as forwards, backwards, sequencing, and letter-number sequencing. The game increases in difficulty as the user progresses by increasing the length of the sequences.
+It is essentially a direct digital clone of the WAIS-IV Digit Span and Letter-Number Sequencing subtests, replicating these well-known cognitive assessments. This project offers users an authentic experience that mirrors the memory tasks used in professional IQ testing to measure working memory.
 
+## FEATURES
 
-## Table of Contents
+### Multiple Modes
 
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Setup](#setup)
-- [How to Play](#how-to-play)
-- [Game Modes](#game-modes)
-- [License](#license)
+- **Forwards**: Recall the sequence in the same order.
 
-## Features
+- **Backwards**: Recall the sequence in reverse order.
 
-Display of random digit sequences to memorize.
+- **Sequencing**: Recall the sequence in ascending order.
 
-Multiple game modes:
+- **Letter-Number Sequencing**: Recall a mixed sequence of letters and numbers in a specific order.
 
-Forwards (standard digit span)
+### Dynamic Sequence Generation
+- Sequences are randomly generated and increase in length as the user progresses.
 
-Backwards (recall digits in reverse order)
+### Session Management
+- User progress is managed through sessions, allowing for a continuous experience.
 
-Sequencing (rearrange digits in numerical order)
+### Responsive Design 
+- The game is designed to be responsive and works well on various screen sizes.
 
-Letter-Number Sequencing (mixed digits and letters)
 
-Input validation and result checking.
+## TECHNOLOGIES USED
 
-Session management to keep track of the current game state.
+- **Java**: Core logic and backend processing.
 
-Responsive design for an improved user experience.
+- **Servlets**: Handling HTTP requests and responses.
 
+- **JSP (JavaServer Pages)**: Frontend rendering and dynamic content.
 
-## Technologies Used
+- **Hibernate**: ORM for database interactions (if needed).
 
+- **Maven**: Dependency management and project building.
 
-Java: Core application logic.
+- **HTML/CSS/JavaScript**: Frontend design and interactivity.
 
-Hibernate ORM: Object-relational mapping for data management.
 
-JSP (JavaServer Pages): For the frontend interface.
+## INSTALLATION
 
-Servlets: Backend handling for form submissions and game logic.
+### Prerequisites
 
-JSTL (JavaServer Pages Standard Tag Library): Used for dynamic content rendering in JSP.
+- Java Development Kit (JDK) 14 or higher.
+- Apache Maven.
+- A servlet container like Apache Tomcat.
+- MySQL (if using Hibernate for database interactions).
 
-CSS: For styling the UI.
+### Steps
 
-Jackson Databind: Used to handle JSON operations in the backend.
+#### Clone the Repository:
 
-## Setup
+      git clone https://github.com/yourusername/digit-span-game.git
+      cd digit-span-game
 
-**Prerequisites**
+#### Build the Project
 
-Java Development Kit (JDK) 14 or higher
+      mvn clean install
 
-Apache Maven
 
-A web server (e.g., Apache Tomcat)
+#### Deploy to Tomcat
 
-**Dependencies**
+- Copy the generated WAR file from the target directory to the webapps directory of your Tomcat installation.
+- Start Tomcat.
 
-Hibernate Core: Version 6.5.0
+#### Access the Application
 
-Jackson Databind: Version 2.14.0
+Open a web browser and navigate to http://localhost:8080/digit-span
 
-Servlet API: Version 3.1.0
+## USAGE
 
-Commons Collections: Version 4.4
+### Start the Game
 
-JSTL: Version 1.2
+- On the main page, select the desired mode and click "Start".
 
-Hibernate Commons Annotations: Version 6.0.6
+### Recall the Sequence
 
-Taglibs Standard: Version 1.1.2
+- After the sequence is displayed, enter the sequence in the input field and click "Check".
 
-**Installation**
+### Progress
 
-1) Clone the repository:
+- If the sequence is correct, the game will increase the sequence length.
 
-git clone https://github.com/yourusername/working-memory-game.git
+- If incorrect, the game will reset the sequence length.
 
-2) Navigate to the project directory:
-   
-cd working-memory-game
+### Reset
 
-3) Build the project using Maven:
-
-mvn clean install
-
-Deploy the generated WAR file to your web server.
-
-4) Deploy the generated WAR file to your web server.
-
-
-## How to Play
-
-Choose a mode from the dropdown menu.
-
-Press the Start button to display a sequence of numbers.
-
-After the sequence is displayed, enter the digits in the correct order based on the mode you've selected.
-
-Press Check to validate your input.
-
-
-## Game Modes
-
-Forwards: Recall the sequence in the same order as displayed.
-
-Backwards: Recall the sequence in reverse order.
-
-Sequencing: Rearrange the digits in ascending numerical order.
-
-Letter-Number Sequencing: Rearrange the sequence with numbers first in ascending order, followed by letters in alphabetical order.
-
-## Project Structure ##
-
-src/main/java/org/digit_span/: Contains Java source files
-
-      digit_span_util/: Utility classes for game logic
-
-      servlet/: Servlet classes for handling HTTP requests
-
-  src/main/webapp/: Web resources
-
-      WEB-INF/: Configuration files
-      
-      *.jsp: JavaServer Pages for the user interface
-
-
-pom.xml: Maven project configuration file
+- Click "Reset" to start over from the beginning.
 
